@@ -37,8 +37,6 @@ class SignInController {
 
     const { login, avatar_url, name, bio, email } = response.data;
 
-    console.log(response.data);
-
     const user = await Users.create({
       login: login.toLowerCase(),
       avatar_url,
