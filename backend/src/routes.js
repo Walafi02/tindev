@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import SignInController from './app/controllers/SignInController';
+
 const routes = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ ok: true });
-});
+routes.post('/signin', SignInController.store);
 
 export default routes;
