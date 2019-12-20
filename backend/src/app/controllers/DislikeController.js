@@ -6,12 +6,9 @@ class DislikeController {
     const { id } = req.params;
 
     const userAuth = await Users.findById(_id);
+    const userSelected = await Users.findById(id);
 
-    let userSelected = null;
-
-    try {
-      userSelected = await Users.findById(id);
-    } catch (error) {
+    if (!userSelected) {
       return res.status(400).json({ error: 'ID invalid' });
     }
 

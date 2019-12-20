@@ -1,5 +1,8 @@
+import jwt from 'jsonwebtoken';
 import axios from 'axios';
 import * as Yup from 'yup';
+
+import configAuth from '../../config/auth';
 
 import Users from '../schemas/Users';
 
@@ -25,6 +28,9 @@ class SignInController {
         name: userExist.name,
         email: userExist.email,
         avatar_url: userExist.avatar_url,
+        token: jwt.sign({ _id: userExist._id }, configAuth.secret, {
+          expiresIn: configAuth.expiresIn,
+        }),
       });
     }
 
@@ -45,7 +51,15 @@ class SignInController {
       email,
     });
 
-    return res.json({ _id: user._id, name, email, avatar_url });
+    return res.json({
+      _id: user._id,
+      name,
+      email,
+      avatar_url,
+      token: jwt.sign({ _id: user._id }, configAuth.secret, {
+        expiresIn: configAuth.expiresIn,
+      }),
+    });
   }
 }
 

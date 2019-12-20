@@ -6,12 +6,9 @@ class LikeController {
     const { id } = req.params;
 
     const userAuth = await Users.findById(_id);
+    const userSelected = await Users.findById(id);
 
-    let userSelected = null;
-
-    try {
-      userSelected = await Users.findById(id);
-    } catch (error) {
+    if (!userSelected) {
       return res.status(400).json({ error: 'ID invalid' });
     }
 
@@ -23,8 +20,6 @@ class LikeController {
     if (userSelected.like.includes(_id)) {
       console.log('deu metch');
     }
-
-    // verifica se ha metch
 
     return res.json();
   }
