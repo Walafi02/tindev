@@ -1,6 +1,15 @@
 import React from 'react';
-import Signin from '~/pages/Signin';
+import { StatusBar } from 'react-native';
+
+import Routes from './app';
+
+import 'react-native-gesture-handler';
 
 export default function App() {
-  return <Signin />;
+  return (
+    <>
+      <StatusBar barStyle="dark-content" backgroundColor="#E5E5E5" />
+      <Routes />
+    </>
+  );
 }
