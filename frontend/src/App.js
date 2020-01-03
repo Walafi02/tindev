@@ -1,9 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Routes from '~/routes';
+import GlobalStyles from './styles/global';
 
 export default function src() {
   return (
-    <h1>ok</h1>
+    <>
+      <Routes />
+      <GlobalStyles />
+    </>
   );
 }
