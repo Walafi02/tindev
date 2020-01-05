@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 
-export default function Dashboard() {
+export default function Main() {
   return (
     <View>
-      <Text>Dashboard</Text>
+      <Text>Main</Text>
     </View>
   );
 }
