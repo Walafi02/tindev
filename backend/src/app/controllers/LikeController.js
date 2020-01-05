@@ -18,7 +18,23 @@ class LikeController {
     }
 
     if (userSelected.like.includes(_id)) {
-      console.log('deu metch');
+      const conUserSelected = req.connectedUsers[userSelected._id];
+      const conUserAuth = req.connectedUsers[userAuth._id];
+
+      if (conUserAuth) {
+        const { avatar_url, bio, login, name } = userSelected;
+        req.io
+          .to(conUserAuth)
+          .emit('match-user', { avatar_url, bio, login, name });
+      }
+
+      if (conUserSelected) {
+        const { avatar_url, bio, login, name } = userAuth;
+
+        req.io
+          .to(conUserSelected)
+          .emit('match-user', { avatar_url, bio, login, name });
+      }
     }
 
     return res.json();

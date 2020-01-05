@@ -3,7 +3,7 @@ import Users from '../schemas/Users';
 class UsersController {
   async index(req, res) {
     const { _id } = req;
-    const { page = 1, limit = 10 } = req.query;
+    const { page = 1, limit = 6 } = req.query;
 
     const user = await Users.findById(_id);
 

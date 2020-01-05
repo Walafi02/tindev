@@ -25,6 +25,7 @@ class SignInController {
     if (userExist) {
       return res.json({
         _id: userExist._id,
+        login: userExist.login,
         name: userExist.name,
         email: userExist.email,
         avatar_url: userExist.avatar_url,
@@ -53,6 +54,7 @@ class SignInController {
 
     return res.json({
       _id: user._id,
+      login: user.login,
       name,
       email,
       avatar_url,
