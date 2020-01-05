@@ -5,8 +5,13 @@ export const Container = styled.div`
   margin: 5px;
   border-radius: 4px;
 
+  display: flex;
+  flex-direction: column;
+
   .content {
     background: #fff;
+    flex: 1;
+    margin-bottom: 10px;
   }
 
   img {

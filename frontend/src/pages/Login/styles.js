@@ -40,6 +40,11 @@ export const Container = styled.div`
       &:hover {
         background: ${darken(0.03, '#DF4723')};
       }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
     }
   }
 `;

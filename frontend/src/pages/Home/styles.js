@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 10px 25px;
 
   header {
     display: flex;
@@ -22,12 +22,16 @@ export const Container = styled.div`
       width: 100px;
       height: 50px;
     }
+
+    button {
+      background: transparent;
+      border: none;
+    }
   }
 
   section {
     display: flex;
     flex-wrap: wrap;
-
-    /* justify-content: space-between; */
+    justify-content: center;
   }
 `;
