@@ -24,23 +24,8 @@ class App {
   connection() {
     this.io.on('connection', socket => {
       const { id } = socket.handshake.query;
-      console.log('entrou', id);
       this.connectedUsers[id] = socket.id;
     });
-
-    // setInterval(function() {
-    //   console.log(this.connectedUsers);
-    //   // const bookingUserSocket = req.connectedUsers[booking.user];
-    //   // const test = this.connectedUsers['5e10bbba25263e2c517f66ab'];
-    //   // // const spot = await Spot.findById(booking.spot);
-
-    //   // if (test) {
-    //   //   console.log('existe');
-    //   //   // req.io
-    //   //   //     .to(bookingUserSocket)
-    //   //   //     .emit("booking_response", { ...booking._doc, spot });
-    //   // }
-    // }, 5000);
   }
 
   middlewares() {
