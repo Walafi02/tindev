@@ -17,7 +17,7 @@ import { Container, Form, ButtonSubmit, Input } from './styles';
 import logo from '~/assets/logo.png';
 
 export default function Login({ navigation }) {
-  const [username, setUsername] = useState('walafi02');
+  const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function loadUser() {
@@ -55,8 +55,6 @@ export default function Login({ navigation }) {
           autoCapitalize="none"
           autoCorrect={false}
           placeholder="Usuário do Github"
-          // returnKeyType="send"
-          // onSubmitEditing={handleSubmit}
           value={username}
           onChangeText={setUsername}
         />

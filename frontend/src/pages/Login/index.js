@@ -8,7 +8,7 @@ import { Container } from './styles';
 import api from '~/services/api';
 
 export default function Login({ history }) {
-  const [username, setUsername] = useState('walafi02');
+  const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

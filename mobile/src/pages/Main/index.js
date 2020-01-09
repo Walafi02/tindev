@@ -5,34 +5,10 @@ import PropTypes from 'prop-types';
 import socketIo from 'socket.io-client';
 
 import api from '~/services/api';
-
 import { User, Header, Match } from '~/components';
 import { Container, ListUsers } from './styles';
 
-// const users = [
-//   {
-//     _id: 1,
-//     name: 'teste 01',
-//     login: 'teste01',
-//     avatar_url: 'https://api.adorable.io/avatars/100/test.png',
-//     bio:
-//       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, maiores? Quia tenetur laborum pariatur, molestias nisi, quas facere ratione et soluta veniam accusantium illo libero minus ipsa exercitationem incidunt voluptates!',
-//   },
-//   {
-//     _id: 2,
-//     name: 'teste 02',
-//     login: 'teste02',
-//     avatar_url: 'https://api.adorable.io/avatars/100/test2.png',
-//     bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit!',
-//   },
-//   {
-//     _id: 3,
-//     name: 'teste 03',
-//     avatar_url: 'https://api.adorable.io/avatars/100/test3.png',
-//     login: 'teste03',
-//   },
-// ];
-
+console.disableYellowBox = true;
 export default function Main({ navigation }) {
   const userParam = navigation.getParam('user');
   const [user, setUser] = useState(null);
